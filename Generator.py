@@ -5,16 +5,21 @@ import random as ra
 #    1- must at least by 9 ch 
 #    2- it must have a least one spechial ch
 
-# The Defult Generator without any parameter 
-def PassGenerator ():
-    password = ""
-    for ch in range(9):
+class PassWordGenerator :
+    
+    # Easy password with Numbers only 
+    def EasyPassword ():
+     password = ""
+     for ch in range(9):
         password += str(ra.randint(0 , 9))
-    return password
+     return password
+
+    # password with 
 
 
-print(PassGenerator())
 
-def __init__ (self):
-    print(self.PassGenerator())
+
+
+
+
      
