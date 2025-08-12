@@ -27,7 +27,7 @@ class PassWordGenerator :
        return password
     
 
-        
+  # password with Nch and nubmers and punctuation randmly  
     def HighLevelPassword(self):
         password = ""
         for _ in range(9):
