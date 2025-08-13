@@ -3,7 +3,7 @@ import string
 
 # password ruls 
 #    1- must at least by 9 ch 
-#    2- it must have a least one spechial ch
+#    2- it must have a least one punctuation and letter
 
 class PassWordGenerator :
     
@@ -42,8 +42,25 @@ class PassWordGenerator :
         if self.__cheakPasswordValid__(password):
            return password
         else:
-        # maybe retry or return None
-           return None
+           print("i am here ")
+           random_index = ra.randint(0 , 8)
+           if random_index == 0 :
+              random_index_puc = ra.randint(1 ,random_index) 
+           else :
+                random_index_puc = ra.randint(0 ,random_index)
+                          
+           if random_index == random_index_puc and not 8 :
+              random_index_puc +=1
+           else :
+              random_index_puc =0 
+
+           print (random_index)
+           print(random_index_puc)
+           passwordAsList = list(password)
+           passwordAsList[random_index] = ra.choice(string.ascii_letters)
+           passwordAsList[random_index_puc] = ra.choice(string.punctuation)
+           newPassword = "".join(passwordAsList)
+           return newPassword
 
     
      # cheak if the password at least have one punctuation and one letter 
