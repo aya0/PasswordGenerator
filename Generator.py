@@ -42,25 +42,8 @@ class PassWordGenerator :
         if self.__cheakPasswordValid__(password):
            return password
         else:
-           print("i am here ")
-           random_index = ra.randint(0 , 8)
-           if random_index == 0 :
-              random_index_puc = ra.randint(1 ,random_index) 
-           else :
-                random_index_puc = ra.randint(0 ,random_index)
-                          
-           if random_index == random_index_puc and not 8 :
-              random_index_puc +=1
-           else :
-              random_index_puc =0 
-
-           print (random_index)
-           print(random_index_puc)
-           passwordAsList = list(password)
-           passwordAsList[random_index] = ra.choice(string.ascii_letters)
-           passwordAsList[random_index_puc] = ra.choice(string.punctuation)
-           newPassword = "".join(passwordAsList)
-           return newPassword
+           NewPassword = self.__handlUnvalidPassword__(password)
+           return  NewPassword
 
     
      # cheak if the password at least have one punctuation and one letter 
@@ -78,6 +61,30 @@ class PassWordGenerator :
            return True 
         
         return False     
+    
+
+    # handl unvalid password by add letter and punc ch 
+
+    def __handlUnvalidPassword__(self , password ):
+           
+           random_index = ra.randint(0 , 8)
+           if random_index == 0 :
+              random_index_puc = ra.randint(1 ,random_index) 
+           else :
+                random_index_puc = ra.randint(0 ,random_index)
+                          
+           if random_index == random_index_puc and not 8 :
+              random_index_puc +=1
+           else :
+              random_index_puc =0 
+
+           passwordAsList = list(password)
+           passwordAsList[random_index] = ra.choice(string.ascii_letters)
+           passwordAsList[random_index_puc] = ra.choice(string.punctuation)
+           newPassword = "".join(passwordAsList)
+
+           return newPassword
+       
                   
        
        
