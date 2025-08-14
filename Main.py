@@ -1,7 +1,7 @@
 import time 
 from Generator import PassWordGenerator as passw
 import HelperMethod as HM
-passwordObject =  passw()
+passwordObject =passw()
 
 Exit = False
 print("welcome to Password Generator ")
@@ -14,13 +14,14 @@ while Exit == False :
     HM.PrintPuse(" 4- Exit " ,1)
 
     choice = input()
-    if(int(choice) == 1 ):
+    
+    if(choice == '1' ):
        HM.PrintPuse(f" This is your password: "+ passwordObject.EasyPassword() , 1) 
-    elif(int(choice) == 2 ):
+    elif(choice == '2' ):
         HM.PrintPuse(f" This is your password: "+passwordObject.MidPassword() ,1)
-    elif(int(choice) == 3 ):
+    elif(choice == '3' ):
         HM.PrintPuse(f" This is your password: "+passwordObject.HighLevelPassword() ,1)
-    elif(int(choice) == 4 ):
+    elif(choice == '4' ):
         Exit = True    
     else :
         HM.PrintPuse ("Please Enter a right Number for choice " ,1)           
