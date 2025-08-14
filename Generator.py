@@ -16,16 +16,18 @@ class PassWordGenerator :
 
     # password with Nch and nubmers make it somewho difecalte
     def MidPassword(self):
-       password = ""
-       for ch in range(9):
-        ch = ch * ra.randint(0 , 9)
-        if ch%2 == 0 :
+      password = ""
+      for ch in range(9):
+         ch = ch * ra.randint(0 , 9)
+         if ch%2 == 0 :
             password +=ra.choice(string.digits)
-        else : 
+         else : 
             password +=ra.choice(string.ascii_letters)
-
-       return password
-    
+      if self.__cheakPasswordValid__(password):
+         return password
+      else :
+         NewPassword = self.__handlUnvalidPassword__(password)
+         return  NewPassword
 
   # password with Nch and nubmers and punctuation randmly  
     def HighLevelPassword(self):
@@ -89,11 +91,7 @@ class PassWordGenerator :
        
        
       
-if __name__ == "__main__":
-   NewPassword = PassWordGenerator()
-   print(NewPassword.EasyPassword())
-   print(NewPassword.MidPassword())
-   print(NewPassword.HighLevelPassword())
+
 
 
 
