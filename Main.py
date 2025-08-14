@@ -1,37 +1,28 @@
 import time 
 from Generator import PassWordGenerator as passw
+import HelperMethod as HM
 passwordObject =  passw()
 
 Exit = False
 print("welcome to Password Generator ")
+
 while Exit == False :
-    time.sleep(2)
-    print("Choice the password you want ( please enter the number of the choice ) : ")
-    time.sleep(1)
-    print(" 1- Easy Password ")
-    time.sleep(1)
-    print(" 2- Mid Password ")
-    time.sleep(1)
-    print(" 3- secure password ")
-    time.sleep(1)
-    print(" 4- Exit ")
+    HM.PrintPuse("Choice the password's Level you want ( please enter the number of the choice ) : " , 2)
+    HM.PrintPuse(" 1- Easy Password " ,1)
+    HM.PrintPuse(" 2- Mid Password " ,1)
+    HM.PrintPuse(" 3- secure password " ,1)
+    HM.PrintPuse(" 4- Exit " ,1)
 
     choice = input()
-    
-    print (choice)
     if(int(choice) == 1 ):
-       time.sleep(1)
-       print(f" This is your password: "+ passwordObject.EasyPassword()) 
+       HM.PrintPuse(f" This is your password: "+ passwordObject.EasyPassword() , 1) 
     elif(int(choice) == 2 ):
-        time.sleep(1)
-        print(f" This is your password: "+passwordObject.MidPassword())
+        HM.PrintPuse(f" This is your password: "+passwordObject.MidPassword() ,1)
     elif(int(choice) == 3 ):
-        time.sleep(1)
-        print(f" This is your password: "+passwordObject.HighLevelPassword())
-    elif(choice == 4 ):
+        HM.PrintPuse(f" This is your password: "+passwordObject.HighLevelPassword() ,1)
+    elif(int(choice) == 4 ):
         Exit = True    
     else :
-        time.sleep(1)
-        print ("Please Enter a right Number for choice ")           
+        HM.PrintPuse ("Please Enter a right Number for choice " ,1)           
 
 
